@@ -1,0 +1,58 @@
+<div class="jumbotron">
+  <h1>Welcome to Shop!</h1>
+  <p>Here you can purchase all kinds of computer hardware for lowest prices. We sell from only trusted and large distributors,
+  to fulfill all your DIY computer needs!</p>
+  <p><a href="#" class="btn btn-primary btn-lg">Learn more</a>
+</div>
+
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="card" id="cart">
+      <div class="card-header">
+           <h3 class="card-title">Categories</h3>
+      </div>
+      <div class="card-body">
+        <ul>
+          <% Category.all.each do |category| %>
+              <li><a href="#"><%= category.name %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="row">
+        <% @products.each do |product| %>
+
+        <div class="col-md-6 product-item">
+          <div class="card">
+            <div class="card-body">
+              <h3><%= product.title %></h3>
+              <% if product.picture.attached? %>
+                  <div class="img" style="background-image: url('<%= rails_blob_url(product.picture) %>')"></div>
+              <% end %>
+              <h4>$<%= product.price %></h4>
+              <p>
+                <button class="btn btn-secondary">View</button>
+                <button class="btn btn-primary">Add to cart</button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <% end %>
+    </div>
+  </div>
+  <div class="col-md-3">
+      <div class="card" id="cart">
+        <div class="card-header">
+          <h3 class="card-title">Cart</h3>
+        </div>
+        <div class="card-body">
+          Your cart is empty
+        </div>
+      </div>
+  </div>
+</div>
