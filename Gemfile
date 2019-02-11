@@ -10,6 +10,7 @@ gem 'activeadmin'
 gem 'file_validators'
 gem 'mini_magick', '~> 4.8'
 
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
