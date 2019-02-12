@@ -5,32 +5,32 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+/web-shop/.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+/web-shop/db/*.sqlite3
+/web-shop/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+/web-shop/log/*
+/web-shop/tmp/*
+!/web-shop/log/.keep
+!/web-shop/tmp/.keep
 
 # Ignore uploaded files in development
-/storage/*
-!/storage/.keep
+/web-shop/storage/*
+!/web-shop/storage/.keep
 
-/node_modules
-/yarn-error.log
+/web-shop/node_modules
+/web-shop/yarn-error.log
 
-/public/assets
-.byebug_history
+/web-shop/public/assets
+/web-shop/.byebug_history
 
-/vendor
+/web-shop/vendor
 
-/.idea/
-/.directory
+.idea/
+.directory
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+/web-shop/config/master.key
