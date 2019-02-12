@@ -9,11 +9,14 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor 
 
 rbenv install 2.5.1 || true
 rbenv local 2.5.1
+
 gem install bundler -v 1.16.1
 gem install rake
-bundle
+
+cd web-shop
 
 export RAILS_ENV=test
+bundle
 rake db:migrate
 rake db:reset
 rake db:seed
