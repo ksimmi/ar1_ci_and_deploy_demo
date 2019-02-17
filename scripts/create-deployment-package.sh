@@ -16,7 +16,7 @@ echo ${version} > VERSION
 
 mkdir -p ${HOME}/artifacts
 
-tar -czf ${HOME}/artifacts/web-shop-${build_number}.tar.gz \
+tar -czf ${HOME}/artifacts/web-shop-${version}.tar.gz \
 --exclude=README.md \
 --exclude=features \
 --exclude=test \
