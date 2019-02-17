@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo ./create-deployment-package.sh starts here...
+echo ./deploy-update-package.sh starts here...
 
 set -e
 
