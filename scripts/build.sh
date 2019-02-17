@@ -1,7 +1,7 @@
 #!/bin/bash
 echo ./build.sh starts here...
 
-set -e
+set -ex
 
 echo "build started under user $(whoami)"
 export PATH="$HOME/.rbenv/bin:$PATH"

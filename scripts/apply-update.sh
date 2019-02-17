@@ -1,7 +1,7 @@
 #!/bin/bash
 echo ./apply-update.sh starts here...
 
-set -e
+set -ex
 
 if [ "$(id -u)" != "0" ]; then
   echo "This script must be run as root" 1>&2

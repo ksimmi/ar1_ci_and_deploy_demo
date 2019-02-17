@@ -2,7 +2,7 @@
 
 echo ./deploy-update-package.sh starts here...
 
-set -e
+set -ex
 
 host=${1}
 id_rsa_key_path=${2}
