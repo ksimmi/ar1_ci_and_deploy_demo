@@ -14,6 +14,8 @@ echo ${version} > VERSION
 
 mkdir -p ${HOME}/artifacts
 
+echo setting master.key value as $master_key_value
+
 echo $master_key_value > './config/master.key'
 
 tar -czf ${HOME}/artifacts/web-shop-${build_number}.tar.gz \
