@@ -3,7 +3,9 @@ echo ./build.sh starts here...
 
 set -ex
 
+cd ./scripts
 source helpers/load_rbenv.sh
+cd -
 
 rbenv install 2.5.1 || true
 rbenv local 2.5.1

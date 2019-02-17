@@ -3,7 +3,9 @@ echo ./create-deployment-package.sh starts here...
 
 set -ex
 
+cd ./scripts
 source helpers/load_rbenv.sh
+cd -
 
 version=${1}
 master_key_value=${2}
