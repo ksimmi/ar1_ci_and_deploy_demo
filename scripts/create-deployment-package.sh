@@ -20,3 +20,5 @@ tar -czf ${HOME}/artifacts/web-shop-${build_number}.tar.gz \
 .
 
 cd -
+
+ls ${HOME}/artifacts/
