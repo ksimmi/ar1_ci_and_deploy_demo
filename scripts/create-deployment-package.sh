@@ -8,7 +8,6 @@ source helpers/load_rbenv.sh
 cd -
 
 version=${1}
-echo ${version} > VERSION
 
 master_key_value=${2}
 
