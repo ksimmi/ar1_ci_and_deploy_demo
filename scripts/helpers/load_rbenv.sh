@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 echo "build started under user $(whoami)"
 export PATH="$HOME/.rbenv/bin:$PATH"
