@@ -13,10 +13,10 @@ echo ${version} > VERSION
 script_execution_dir=$(pwd)
 echo Scripts runed under $script_execution_dir directory
 
-tar -czf ${HOME}/artifacts/web-shop-${build_number}.tar.gz \
---exclude=README.md \
---exclude=features \
---exclude=test \
-.
+#tar -czf ${HOME}/artifacts/web-shop-${build_number}.tar.gz \
+#--exclude=README.md \
+#--exclude=features \
+#--exclude=test \
+#.
 
 #cd -
