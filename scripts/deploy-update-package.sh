@@ -9,6 +9,9 @@ version=${4}
 package_name=web-shop-${version}.tar.gz
 package_name_path=${HOME}/artifacts/${package_name}
 
+script_execution_dir=$(pwd)
+echo Scripts runed under $script_execution_dir directory
+
 chmod 700 keys
 chmod 600 ${id_rsa_key_path}
 
