@@ -8,14 +8,13 @@ master_key_value=${2}
 
 cd web-shop
 
+echo $master_key_value > './config/master.key'
+
 RAILS_ENV=production rake assets:precompile
 
 echo ${version} > VERSION
 
 mkdir -p ${HOME}/artifacts
-
-echo $master_key_value > './config/master.key'
-echo $(cat ./config/master.key)
 
 tar -czf ${HOME}/artifacts/web-shop-${build_number}.tar.gz \
 --exclude=README.md \
