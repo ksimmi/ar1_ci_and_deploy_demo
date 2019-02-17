@@ -1,4 +1,5 @@
 #!/bin/bash
+echo ./apply-update.sh starts here...
 
 set -e
 

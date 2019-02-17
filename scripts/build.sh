@@ -1,4 +1,5 @@
 #!/bin/bash
+echo ./build.sh starts here...
 
 set -e
 

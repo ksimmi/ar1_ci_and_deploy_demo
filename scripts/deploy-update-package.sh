@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo ./create-deployment-package.sh starts here...
+
 set -e
 
 host=${1}
