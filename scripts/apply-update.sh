@@ -18,7 +18,7 @@ project_root=${HOME}/web-shop
 instance_name=${1}
 package_name=${2}
 
-version_part=$(cat ${project_root}/VERSION)
+version_part=$(cat ${HOME}/VERSION)
 backup_date_part=$(date +"%Y-%m-%d--%H-%M")
 backup_dir_path=${project_root}_backup_${backup_date_part}_v${version_part}
 
