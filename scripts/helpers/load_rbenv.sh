@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "build started under user $(whoami)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
