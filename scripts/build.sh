@@ -3,6 +3,8 @@ echo ./build.sh starts here...
 
 set -ex
 
+echo "build started under user $(whoami)"
+
 cd ./scripts
 source helpers/load_rbenv.sh
 cd -
