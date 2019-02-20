@@ -23,6 +23,5 @@ rake db:migrate
 rake db:reset
 rake db:seed
 rails s -d
-bundle exec cucumber --color
-
+#bundle exec cucumber --color
 cd -
