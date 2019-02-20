@@ -17,7 +17,7 @@ gem install rake
 
 cd web-shop
 
-rails_pid=lsof -i:3000 | grep ruby | awk '{ print $2 }'
+rails_pid=$(lsof -i:3000 | grep ruby | awk '{ print $2 }')
 kill -9 $rails_pid
 
 export RAILS_ENV=test
