@@ -22,8 +22,8 @@ version_part=$(cat ${HOME}/VERSION)
 backup_date_part=$(date +"%Y-%m-%d--%H-%M")
 backup_dir_path=${project_root}_backup_${backup_date_part}_v${version_part}
 
-db_path=${project_root}/db/production.sqlite3
-stash_db_path=/tmp/db/production.sqlite3
+db_path=${project_root}/db/${instance_name}.sqlite3
+stash_db_path=/tmp/db/${instance_name}.sqlite3
 
 systemctl stop puma-${instance_name}.service
 
