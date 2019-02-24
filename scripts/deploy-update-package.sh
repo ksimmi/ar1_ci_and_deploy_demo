@@ -23,7 +23,7 @@ scp ${package_name_path} ${host}:~
 echo ${version} > VERSION
 scp VERSION ${host}:~
 
-ssh -i ${id_rsa_key_path} ${host} <<EOL
+ssh ${host} <<EOL
 chmod +x apply-update.sh
 sudo ./apply-update.sh ${instance_name} ${package_name}
 EOL
