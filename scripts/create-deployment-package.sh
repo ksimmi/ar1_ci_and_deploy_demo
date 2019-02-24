@@ -8,7 +8,6 @@ source helpers/load_rbenv.sh
 cd -
 
 version=${1}
-
 master_key_value=${2}
 
 cd web-shop
