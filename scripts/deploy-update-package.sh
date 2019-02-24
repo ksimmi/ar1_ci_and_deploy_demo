@@ -17,11 +17,11 @@ echo Scripts runed under $script_execution_dir directory
 chmod 700 keys
 chmod 600 ${id_rsa_key_path}
 
-scp -i ${id_rsa_key_path} -p scripts/apply-update.sh ${host}:~
-scp -i ${id_rsa_key_path} ${package_name_path} ${host}:~
+scp scripts/apply-update.sh ${host}:~
+scp ${package_name_path} ${host}:~
 
 echo ${version} > VERSION
-scp -i ${id_rsa_key_path} VERSION ${host}:~
+scp VERSION ${host}:~
 
 ssh -i ${id_rsa_key_path} ${host} <<EOL
 chmod +x apply-update.sh
