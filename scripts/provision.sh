@@ -49,8 +49,6 @@ rbenv local ${RUBY_VERSION}
 echo "# Installing bundler"
 gem install bundler -v 1.16.1
 
-#gem install libv8 -v '6.7.288.46.1' -- --with-system-v8
-
 echo "# Configuring app"
 mkdir -p ${project_root}
 tar -xzf ${package_name} -C ${project_root}
