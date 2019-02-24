@@ -30,6 +30,8 @@ systemctl stop puma-${instance_name}.service
 su ${SUDO_USER} <<USERCOMMANDS
 PATH=${RBENV_BIN_PATH}:${RBENV_SHIMS_PATH}:$PATH
 
+mkdir -p ${project_root}
+
 echo " # Put db to temporary stash"
 cp ${db_path} ${stash_db_path}
 
@@ -38,7 +40,6 @@ mv ${project_root} ${backup_dir_path}
 mv ${db_path} ${backup_dir_path}
 
 echo " # Extracting app package"
-mkdir ${project_root}
 tar -xzf ${HOME}/${package_name} -C ${project_root}
 
 echo " # Installing app dependencies"
