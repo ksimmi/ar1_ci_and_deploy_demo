@@ -62,7 +62,6 @@ cd ${project_root}
 bundle install
 
 echo " # Configuring app"
-rake db:migrate
 
 cat > ${project_root}/config/environments/${instance_name}.rb <<EOL
 Rails.application.configure do
