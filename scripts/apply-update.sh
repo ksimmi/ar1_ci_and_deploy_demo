@@ -34,8 +34,6 @@ set -ex
 
 PATH=${RBENV_BIN_PATH}:${RBENV_SHIMS_PATH}:$PATH
 
-cp ${HOME}/VERSION ${project_root}/VERSION
-
 mkdir -p ${stash_db_dir}
 
 echo " # Creating backup"
@@ -89,6 +87,8 @@ ${instance_name}:
 EOL
 
 RAILS_ENV=${instance_name} bundle exec rake db:migrate
+
+cp ${HOME}/VERSION ${project_root}/VERSION
 USERCOMMANDS
 
 cat > /etc/systemd/system/puma-${instance_name}.service <<EOL
