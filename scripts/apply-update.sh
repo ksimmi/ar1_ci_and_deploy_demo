@@ -71,6 +71,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 end
 EOL
+
+cat >> ${project_root}/config/database.yml <<EOL
+
+${instance_name}:
+  <<: *default
+  database: db/${instance_name}.sqlite3
+EOL
+
+RAILS_ENV=${instance_name} bundle exec rake db:migrate
 USERCOMMANDS
 
 cat > /etc/systemd/system/puma-${instance_name}.service <<EOL
