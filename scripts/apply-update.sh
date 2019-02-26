@@ -32,6 +32,8 @@ systemctl stop puma-${instance_name}.service
 su ${SUDO_USER} <<USERCOMMANDS
 PATH=${RBENV_BIN_PATH}:${RBENV_SHIMS_PATH}:$PATH
 
+mv ${HOME}/VERSION ${project_root}/VERSION
+
 mkdir -p ${stash_db_dir}
 
 echo " # Creating backup"
