@@ -34,7 +34,7 @@ set -ex
 
 PATH=${RBENV_BIN_PATH}:${RBENV_SHIMS_PATH}:$PATH
 
-mv ${HOME}/VERSION ${project_root}/VERSION
+cp ${HOME}/VERSION ${project_root}/VERSION
 
 mkdir -p ${stash_db_dir}
 
