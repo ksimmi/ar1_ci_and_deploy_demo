@@ -23,7 +23,9 @@ backup_date_part=$(date +"%Y-%m-%d--%H-%M")
 backup_dir_path=${project_root}_backup_${backup_date_part}_v${version_part}
 
 db_path=${project_root}/db/${instance_name}.sqlite3
+stash_db_dir=/tmp/db/
 stash_db_path=/tmp/db/${instance_name}.sqlite3
+
 
 systemctl stop puma-${instance_name}.service
 
@@ -31,6 +33,7 @@ su ${SUDO_USER} <<USERCOMMANDS
 PATH=${RBENV_BIN_PATH}:${RBENV_SHIMS_PATH}:$PATH
 
 mkdir -p ${project_root}
+mkdir -p ${stash_db_dir}
 
 echo " # Put db to temporary stash"
 cp ${db_path} ${stash_db_path}
