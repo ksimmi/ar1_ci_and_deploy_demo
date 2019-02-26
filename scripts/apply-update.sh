@@ -56,7 +56,7 @@ rake db:migrate
 USERCOMMANDS
 
 echo " # Restart services"
-systemctl start puma-${instance_name}.services
+systemctl start puma-${instance_name}.service
 
 echo "# Clenup"
 rm ${HOME}/${package_name}
