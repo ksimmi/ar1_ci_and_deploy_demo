@@ -30,6 +30,8 @@ stash_db_path=/tmp/db/${instance_name}.sqlite3
 systemctl stop puma-${instance_name}.service
 
 su ${SUDO_USER} <<USERCOMMANDS
+set -ex
+
 PATH=${RBENV_BIN_PATH}:${RBENV_SHIMS_PATH}:$PATH
 
 mv ${HOME}/VERSION ${project_root}/VERSION
