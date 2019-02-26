@@ -55,7 +55,24 @@ echo " # Configuring app"
 rake db:migrate
 USERCOMMANDS
 
+cat > /etc/systemd/system/puma-${instance_name}.service <<EOL
+[Unit]
+Description=puma daemon
+After=network.target
+
+[Service]
+Environment=RAILS_ENV=${instance_name}
+User=${SUDO_USER}
+Group=${SUDO_USER}
+WorkingDirectory=${project_root}
+ExecStart=${RBENV_BIN_PATH}/rbenv exec bundle exec puma -C config/puma.rb
+ExecStop=${RBENV_BIN_PATH}/rbenv exec bundle exec pumactl -S tmp/pids/puma.state stop
+[Install]
+WantedBy=multi-user.target
+EOL
+
 echo " # Restart services"
+systemctl enable puma-${instance_name}.service
 systemctl start puma-${instance_name}.service
 
 echo "# Clenup"
