@@ -37,17 +37,23 @@ mv ${HOME}/VERSION ${project_root}/VERSION
 mkdir -p ${stash_db_dir}
 
 echo " # Creating backup"
-mv ${project_root} ${backup_dir_path}
-
 if [ -f ${db_path} ]; then
    echo " # Put db to temporary stash"
    cp ${db_path} ${stash_db_path}
-   mv ${db_path} ${backup_dir_path}
+#  mv ${db_path} ${backup_dir_path}
 fi
+
+mv ${project_root} ${backup_dir_path}
+
 
 echo " # Extracting app package"
 mkdir -p ${project_root}
 tar -xzf ${HOME}/${package_name} -C ${project_root}
+
+if [ -f ${stash_db_path} ]; then
+    echo "# Restore DB from stash"
+    mv ${stash_db_path} ${db_path}
+fi
 
 echo " # Installing app dependencies"
 cd ${project_root}
