@@ -35,12 +35,14 @@ PATH=${RBENV_BIN_PATH}:${RBENV_SHIMS_PATH}:$PATH
 mkdir -p ${project_root}
 mkdir -p ${stash_db_dir}
 
-echo " # Put db to temporary stash"
-cp ${db_path} ${stash_db_path}
-
 echo " # Creating backup"
 mv ${project_root} ${backup_dir_path}
-mv ${db_path} ${backup_dir_path}
+
+if [ -f ${db_path} ]; then
+   echo " # Put db to temporary stash"
+   cp ${db_path} ${stash_db_path}
+   mv ${db_path} ${backup_dir_path}
+fi
 
 echo " # Extracting app package"
 tar -xzf ${HOME}/${package_name} -C ${project_root}
