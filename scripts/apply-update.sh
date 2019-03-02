@@ -24,7 +24,7 @@ backup_dir_path=${project_root}_backup_${backup_date_part}_v${version_part}
 
 db_path=${project_root}/db/${instance_name}.sqlite3
 stash_db_dir=/tmp/db/
-stash_db_path=/tmp/db/${instance_name}.sqlite3
+stash_db_path=${stash_db_dir}${instance_name}.sqlite3
 
 
 systemctl stop puma-${instance_name}.service
@@ -40,7 +40,6 @@ echo " # Creating backup"
 if [ -f ${db_path} ]; then
    echo " # Put db to temporary stash"
    cp ${db_path} ${stash_db_path}
-#  mv ${db_path} ${backup_dir_path}
 fi
 
 mv ${project_root} ${backup_dir_path}
